@@ -1,0 +1,32 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package balancotrimestral;
+
+/**
+ *
+ * @author leand
+ */
+public class BalancoTrimestral {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+        int jan = 15000;
+        int fev = 23000;
+        int mar = 17000;
+        int tri = jan + fev + mar;
+        double med = tri/3;
+        System.out.println("Valor do trimestre = " + tri);
+        System.out.println("Valor da média mensal = " + med);
+        if (tri > 50000) {
+            System.out.println("Quebrou a meta");
+        } else {
+            System.out.println("Dentro da meta");
+        }
+        }
+    }
