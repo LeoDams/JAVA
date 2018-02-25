@@ -1,0 +1,48 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package programa;
+
+/**
+ *
+ * @author leand
+ */
+class Conta{
+    int numero;
+    String titular;
+    double saldo;
+    double salario;
+    
+    void saca(double quantidade){
+        double novosaldo = this.saldo - quantidade;
+        this.saldo = novosaldo;
+    }
+    
+    void deposita(double quantidade){
+        this.saldo += quantidade;
+    }
+    
+}
+class Programa {
+    public static void main(String[] args) {
+        //Criando conta
+        Conta minhaConta;
+        minhaConta = new Conta();
+        
+        //Alterando valores minha conta
+        minhaConta.titular = "Duke";
+        minhaConta.saldo = 1000.0;
+        
+        //saca 200 reais
+        minhaConta.saca(200);
+        
+        //Deposita 500 reais
+        minhaConta.deposita(500);
+        
+        System.out.println("Saldo atual: " + minhaConta.saldo);
+        System.out.println("Saldo atual: " + minhaConta.titular);
+    }
+    
+}
