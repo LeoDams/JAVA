@@ -1,0 +1,30 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package casting;
+
+/**
+ *
+ * @author leand
+ */
+public class Casting {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        //Casting is usefull to convert a unit in another one.
+        int a = 15;
+        float b = 32;
+        char c = 123;
+        
+        System.out.println("Apenas um  inteiro " + a);
+        System.out.println("Float para inteiro " + (int) b);
+        System.out.println("Char para  inteiro " + (int) c);
+        System.out.println("A soma deles como prova = " + (a + (int) b + (int) c));
+        
+    }
+    
+}
