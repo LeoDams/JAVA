@@ -3,32 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-package novo;
-import java.util.*;
+package exercicio2;
+import java.util.*; 
 
 /**
  *
- * @author 360082047
+ * @author leand
  */
-public class Novo {
+public class Exercicio2 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         Scanner in = new Scanner(System.in);
         
-        System.out.println("Digite um numero");
+        System.out.println("Digite um numero para inverter: ");
         int num = in.nextInt();
         
-        int a = num % 10;num = num/10; int invert = a*100;
-        a = num %10;num = num /10;invert = invert + a *10;
-        a = num;invert = invert + a;
+        int num1 = num/100;
+        int num2 = (num-(num1*100))/10;
+        int num3 = num - ((num1*100)+(num2*10));
         
-        System.out.println(invert);
-        
+        System.out.println(num3+""+num2+""+num1);
+
     }
     
 }
