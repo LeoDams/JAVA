@@ -1,0 +1,34 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package novo;
+import java.util.*;
+
+/**
+ *
+ * @author 360082047
+ */
+public class Novo {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner in = new Scanner(System.in);
+        
+        System.out.println("Digite um numero");
+        int num = in.nextInt();
+        
+        int a = num % 10;num = num/10; int invert = a*100;
+        a = num %10;num = num /10;invert = invert + a *10;
+        a = num;invert = invert + a;
+        
+        System.out.println(invert);
+        
+    }
+    
+}
