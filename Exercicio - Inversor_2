@@ -1,0 +1,21 @@
+package exercicio2;
+import java.util.*; 
+
+/**
+ * @author leandro Damascena
+ */
+public class Exercicio2 {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        
+        System.out.println("Digite um numero para inverter: ");
+        int num = in.nextInt();
+        
+        int num1 = num/1000; 
+        int num2 = (num-1000)/100;
+        int num3 = (num-((num1*10+num2)*100))/10;
+        int num4 = num-(num-(num-((num/10)*10)));
+        
+        System.out.println(num4+""+num3+""+num2+""+num1);
+    }
+}
