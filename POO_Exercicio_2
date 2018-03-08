@@ -1,0 +1,26 @@
+/*Questão 2
+Ler um número inteiro N e calcular todos os seus divisores.
+Exemplo: se a entrada for 6, a saída será 1,2,3,6.*/
+
+package poo.ex2;
+import java.util.*;
+
+public class PooEx2 {
+
+    
+    public static void main(String[] args) {
+        
+        Scanner in=new Scanner(System.in);
+        System.out.println("Digite um numero");
+        int dividendo = in.nextInt();
+        
+        for (int divisor=1; divisor <= dividendo; divisor++){
+        int resto = dividendo % divisor;
+        if (resto == 0){
+            System.out.println(divisor+" é divisor de "+dividendo);
+        }
+        }
+        
+        }
+
+      }
