@@ -1,0 +1,35 @@
+/*Questão 3
+Na matemática, um número perfeito é um número inteiro para o qual a soma de todos os
+seus divisores positivos próprios (excluindo ele mesmo) é igual ao próprio número. Por
+exemplo o número 6 é perfeito, pois 1+2+3 é igual a 6. Sua tarefa é escrever um programa
+que imprima se um determinado número é perfeito ou não.
+Exemplos:
+  6 eh perfeito
+  5 não eh perfeito
+  28 eh perfeito*/
+
+package poo.ex2;
+import java.util.*;
+
+public class PooEx3 {
+
+    
+    public static void main(String[] args) {
+        
+        Scanner in=new Scanner(System.in);
+        System.out.println("Digite um numero");
+        int dividendo = in.nextInt();
+        int soma=0;
+        
+        for (int divisor=1; divisor < dividendo; divisor++){
+        int resto = dividendo % divisor;
+        if (resto == 0){
+             soma = divisor + soma;
+        }}
+            if (soma==dividendo){
+            System.out.println(dividendo+" É um número perfeito");                
+            }else{
+             System.out.println(dividendo+" Não é um número perfeito");
+            }
+        }
+      }
