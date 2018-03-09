@@ -1,0 +1,68 @@
+#include <stdlib.h>
+#include <stdio.h>
+#define TAMANHOMAX 100
+
+typedef struct 
+{
+	int topo;
+	int itens[TAMANHOMAX];
+	
+}pilha;
+
+
+void iniciapilha(pilha *p);
+int estavazia(pilha*p);
+int pop  (pilha *p);
+int push (int e, pilha *p);
+void imprime (pilha *p);   
+
+
+int push(int e, pilha *p){
+	if (p->topo == TAMANHOMAX -1){
+		printf("(!)ERROR:% %s", "Estouro de pilha");
+		return (0);
+	}
+	p-> itens[++(p->topo)] = e;
+	return (1);
+}
+
+int pop(pilha *p){
+	if (estavazia(p)){
+		printf("%s\n","Pilha vazia");
+		exit(1);
+	}
+	return (p->itens[p->topo--]);
+}
+
+int estavazia (pilha *p){
+	if (p->topo ==-1)
+		return (1);
+	else
+		return (0);
+}
+
+void imprime (pilha *p){
+	pilha tmpp;
+	iniciapilha(&tmpp);
+	int tmpnum;
+	printf("%s\n","IMPRIMINDO VETOR...");
+	while (!estavazia(p)){
+		tmpnum = pop (p);
+		printf("%d\n", tmpnum);
+		push (tmpnum, &tmpp);
+	}
+	while (!estavazia(&tmpp)){
+		tmpnum = pop(&tmpp);
+		push(tmpnum,p);
+		}
+	}
+	int main(){
+    	pilha p;
+    	iniciapilha(&p);
+    	
+    	push(10, &p);
+	   	push(5, &p);
+    	imprime(&p);
+    	pop(&p);
+    	imprime(&p);
+	}
