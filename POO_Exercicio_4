@@ -12,14 +12,14 @@ public class POO_Exercicio_3 {
     
     Scanner in=new Scanner(System.in);
     
-    System.out.println("Digite um número");
+    System.out.print("Digite um número:   ");
     int N= in.nextInt();
     int menor = 0, i, save = 0, mark = 0;
     int X[];
     X = new int[N];
         
     for (i = 0; i < N; i++){
-        System.out.println("Digite um valor");
+        System.out.print("Digite um valor:   ");
         X[i] = in.nextInt();
         if (i == 0){
             menor = X[i];
@@ -29,8 +29,9 @@ public class POO_Exercicio_3 {
             menor = X[i];
             mark = i;
         }
-        System.out.println("Save "+menor);
     }
-       System.out.println("O menor número foi: " + menor+", na posição: "+(mark+1));
+       System.out.println("-------- A saída é: --------- ");
+       System.out.println("Menor valor: " + menor);
+       System.out.println("Posição: "+(mark+1));
     }
 }
