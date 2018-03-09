@@ -1,0 +1,36 @@
+/*Questão 4
+Faça um programa que leia um valor N. Este N será o tamanho de um vetor X[N]. A seguir,
+leia cada um dos valores de X, encontre o menor elemento deste vetor e a sua posição
+dentro do vetor, mostrando esta informação.*/
+
+package poo_exercicio_3;
+import java.util.*;
+
+public class POO_Exercicio_3 {
+    
+    public static void main(String[] args) {
+    
+    Scanner in=new Scanner(System.in);
+    
+    System.out.println("Digite um número");
+    int N= in.nextInt();
+    int menor = 0, i, save = 0, mark = 0;
+    int X[];
+    X = new int[N];
+        
+    for (i = 0; i < N; i++){
+        System.out.println("Digite um valor");
+        X[i] = in.nextInt();
+        if (i == 0){
+            menor = X[i];
+            mark = i;
+        }
+        if (X[i] < menor){
+            menor = X[i];
+            mark = i;
+        }
+        System.out.println("Save "+menor);
+    }
+       System.out.println("O menor número foi: " + menor+", na posição: "+(mark+1));
+    }
+}
