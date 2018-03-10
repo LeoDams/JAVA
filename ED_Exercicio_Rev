@@ -1,0 +1,31 @@
+1°) Implementar uma função que receba uma pilha como parâmetro e retire todos os elementos ímpares dessa pilha. 
+(Use uma pilha auxiliar). Protótipo: retira_impares (tppilha *p)
+
+
+#include <stdlib.h>
+#include <stdio.h>
+#define DIM 10
+
+int main()
+{
+	int reserva[DIM];
+	int topo=0,i,num=0, testepar;
+	
+	for (i=1;i<DIM;i++){
+    	printf("\n Digite um valor:  ");
+    	scanf("%d",&num);
+    
+    	reserva[i]=num;
+    	topo=i;
+    
+    	printf("\n O topo: %d",num);
+		}
+    for (i=topo;i>0;i--){
+		testepar=reserva[i]%2;
+    	if (testepar==0){
+			printf("\n%d",reserva[i]);
+		}
+		
+	}
+    return 0;       
+}
