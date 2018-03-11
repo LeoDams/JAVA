@@ -1,0 +1,63 @@
+/*
+ * Questão 6
+ * Faça um programa que lê um valor inteiro e informa a quantidade mínima de cédulas em reais
+ * que o valor lido pode ser decomposto. Considere que há as cédulas de 100, 50, 20, 10, 5, 3 e 1
+ * reais.
+ */
+package poo_exercicio_6;
+import java.util.*;
+
+public class POO_Exercicio_6 {
+    
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        
+        System.out.print("Por favor, informe um valor R$: ");
+        float valor = in.nextFloat();
+        int quociente;
+        
+        do{
+        if (valor>=100){
+        quociente=(int)valor/100;
+        System.out.println(quociente+" notas de R$100,00");
+        valor=valor-(quociente*100);
+        }
+        
+        if (valor>=50){
+        quociente=(int)valor/50;
+        System.out.println(quociente+" notas de R$50,00");
+        valor=valor-(quociente*50);
+        }
+        
+        if (valor>=20){
+        quociente=(int)valor/20;
+        System.out.println(quociente+" notas de R$20,00");
+        valor=valor-(quociente*20);
+        
+        }
+        if (valor>=10){
+        quociente=(int)valor/10;
+        System.out.println(quociente+" notas de R$10,00");
+        valor=valor-(quociente*10);
+        }
+        
+        if (valor>=5){
+        quociente=(int)valor/5;
+        System.out.println(quociente+" notas de R$5,00");
+        valor=valor-(quociente*5);
+        }
+        
+        if (valor>=2){
+        quociente=(int)valor/2;
+        System.out.println(quociente+" notas de R$2,00");
+        valor=valor-(quociente*2);
+        }
+       
+        if (valor>=1){
+        quociente=(int)valor/1;
+        System.out.println(quociente+" notas de R$1,00");
+        valor=valor-(quociente*1);
+        }
+        
+    }while(valor>=1);    
+}}
