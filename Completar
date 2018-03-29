@@ -1,0 +1,79 @@
+
+package transferencia_bancaria;
+import java.util.*;
+
+
+public class Transferencia_bancaria 
+{
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
+        
+        System.out.println(" Digite o nome do titular 1");
+        String titular = s.nextLine();
+        
+        System.out.println(" Digite o Saldo da conta 1");
+        int saldo = in.nextInt();
+        
+        System.out.println(" Digite o numero da conta 1");
+        String conta = s.nextLine();
+        
+        System.out.println(" Digite o nome do titular 2");
+        String titular2 = s.nextLine();
+        
+        System.out.println(" Digite o Saldo da conta 2");
+        int saldo2 = in.nextInt();
+        
+        System.out.println(" Digite o numero da conta 2");
+        String conta2 = s.nextLine();
+        
+        System.out.println(" Por favor insira o valor a ser transferido");        
+        int valor = in.nextInt();
+        
+        conta.debitarvalor(valor);
+      
+        if (valor>saldo)
+        {
+            System.out.println(" Transação não autorizada");
+            System.out.println(" Saldo insuficiente");
+        }
+        else
+        {
+
+        
+        System.out.println(" Saldo da conta corrente "+conta+": é :"+newsaldo);
+        System.out.println(" Saldo da conta corrente "+conta2+": é :"+newsaldo2);      
+        }
+}}
+
+   class contacorrente {
+        private String titular;
+        private String conta;
+        public double saldo;
+        contacorrente (String c, String t, Double s){
+            conta = c;
+            titular = t;
+            saldo = s;
+        }
+        }
+
+  class contacorrente2 {
+        private String titular2;
+        private String conta2;
+        public double saldo2;
+        contacorrente2 (String c, String t, Double s){
+            conta2 = c;
+            titular2 = t;
+            saldo2 = s;
+        }
+        }
+
+class debitarvalor{int n, int n2, int saldo
+    public int newsaldo;
+    public int newsaldo2;
+    
+    newsaldo = valor+saldo;   
+    
+}
+
+
