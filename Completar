@@ -1,79 +1,101 @@
 
-package transferencia_bancaria;
-import java.util.*;
+package Transferenciabancaria2;
 
+import java.util.Scanner;
 
-public class Transferencia_bancaria 
-{
-    public static void main(String[] args){
+public class TransferenciaBancaria2 {
+    public static void main(String args[]) {
+        ContaEspecial cDebito = obtemConta();
+        ContaEspecial cCredito = obtemConta();
+        transfereValor(cDebito, cCredito);
+
+    }
+
+    public static ContaEspecial obtemConta() {
+        Scanner in = new Scanner (System.in);
+        System.out.println("Digite o numero da conta");
+        int n = in.nextInt();
+        System.out.println("Digite o saldo da conta");
+        float s = in.nextFloat();
+        System.out.println("Digite o limite de credito conta");
+        float l = in.nextFloat();
+        System.out.println("Digite o nome do titular da conta");
+        in.nextLine();
+        String t = in.nextLine();
+        return new ContaEspecial(l, n,s,t);
+    }
+
+    public static void transfereValor(ContaCorrente cd, ContaCorrente cc) {
         Scanner in = new Scanner(System.in);
-        Scanner s = new Scanner(System.in);
-        
-        System.out.println(" Digite o nome do titular 1");
-        String titular = s.nextLine();
-        
-        System.out.println(" Digite o Saldo da conta 1");
-        int saldo = in.nextInt();
-        
-        System.out.println(" Digite o numero da conta 1");
-        String conta = s.nextLine();
-        
-        System.out.println(" Digite o nome do titular 2");
-        String titular2 = s.nextLine();
-        
-        System.out.println(" Digite o Saldo da conta 2");
-        int saldo2 = in.nextInt();
-        
-        System.out.println(" Digite o numero da conta 2");
-        String conta2 = s.nextLine();
-        
-        System.out.println(" Por favor insira o valor a ser transferido");        
-        int valor = in.nextInt();
-        
-        conta.debitarvalor(valor);
-      
-        if (valor>saldo)
-        {
-            System.out.println(" Transação não autorizada");
-            System.out.println(" Saldo insuficiente");
-        }
+        System.out.println("Digite o valor a ser transferido");
+        float v = in.nextFloat();
+        if(cd.debitar(v))
+            cc.creditar(v);
         else
-        {
-
-        
-        System.out.println(" Saldo da conta corrente "+conta+": é :"+newsaldo);
-        System.out.println(" Saldo da conta corrente "+conta2+": é :"+newsaldo2);      
-        }
-}}
-
-   class contacorrente {
-        private String titular;
-        private String conta;
-        public double saldo;
-        contacorrente (String c, String t, Double s){
-            conta = c;
-            titular = t;
-            saldo = s;
-        }
-        }
-
-  class contacorrente2 {
-        private String titular2;
-        private String conta2;
-        public double saldo2;
-        contacorrente2 (String c, String t, Double s){
-            conta2 = c;
-            titular2 = t;
-            saldo2 = s;
-        }
-        }
-
-class debitarvalor{int n, int n2, int saldo
-    public int newsaldo;
-    public int newsaldo2;
-    
-    newsaldo = valor+saldo;   
-    
+            System.out.println("Nao ha saldo suficiente para a operacao");
+        cd.getSaldo();
+        cc.getSaldo();
+    }
 }
 
+class ContaCorrente {
+    int numConta;
+    float saldo;
+    String titular;
 
+    public ContaCorrente(int n, float s, String t) {
+        numConta = n;
+        saldo = s;
+        titular = t;
+
+    }
+
+    void getSaldo() {
+        System.out.println("Numero conta:" + numConta + " Saldo:" + saldo +
+                " Titular:" + titular);
+
+    }
+
+    boolean debitar(float valor) {
+        if(saldo >= valor) {
+            saldo -= valor;
+            return true;
+        }
+        else
+            return false;
+    }
+
+    void creditar(float valor) {
+        saldo += valor;
+    }
+}
+
+class ContaEspecial extends ContaCorrente {
+    float limiteCredito;
+
+    public ContaEspecial(float lc, int n, float s, String t) {
+        super(n, s, t);
+        limiteCredito = lc;
+
+    }
+
+    boolean debitar(float valor) {
+        if((saldo + limiteCredito) >= valor) {
+            if(saldo>=valor)
+                saldo -= valor;
+            else
+            {
+                limiteCredito = limiteCredito + saldo - valor;
+                saldo = 0;
+            }
+            return true;
+        }
+        else
+            return false;
+    }
+
+    void getSaldo() {
+        super.getSaldo();
+        System.out.println(" Limite de credito: " + limiteCredito);
+    }
+}
