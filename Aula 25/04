@@ -1,0 +1,26 @@
+
+package exerc;
+
+    public class Circulo {
+    private static int numcirc = 0; //Atributo estático que instancia objetos   
+    private static final double PI = 3.1415926535897;
+    private double x, y, r;
+    private double circulo;
+
+public Circulo ( double a, double b, double c) {
+this.x = a;
+this.y = b;
+this.r = c;
+numcirc +=10; //registra os objetos instanciados dessa classe.
+}
+public double calcularArea ( ) {
+double calc = PI * this.r * this.r;
+return calc;
+}
+public static void main (String[ ] args) {
+for (int i=0;i<915;i++){
+    Circulo umcirculo = new Circulo ( 0.0, 0.0, 2.0 );//Instanciando objetos//
+System.out.println("Area do circulo = " + umcirculo. calcularArea ( ));}
+System.out.println("Numero de circulos = " + Circulo.numcirc);
+}
+}
